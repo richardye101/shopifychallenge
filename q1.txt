@@ -11,13 +11,13 @@ relatively affordable item, something seems wrong with our analysis.
             the number of orders. The main caveat here is that each order
             can have more than one item, and that inflates the order_amount
             value. This skews out data with outliers so that our average is far
-            from the true average
+            from the true average.
 
             A better way to evaluate this data is to calculate the average
-            price of shoes sold per order, and take the average of all those
-            values. As each shop sells one type of shoe, this average price can
-            tell us whether customers are shopping at stores with expensive
-            shoes or cheap shoes.
+            price of shoes sold per order (price of shoe of that store),
+            and take the average of all those values. As each shop sells one
+            type of shoe, this average price can tell us whether customers are
+            shopping at stores with expensive shoes or cheap shoes.
 
     b. What metric would you report for this dataset?
         Instead of report the average over value, we can report the average
