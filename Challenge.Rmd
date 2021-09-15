@@ -2,7 +2,9 @@
 title: "Shopify Challenge"
 author: "Richard Ye"
 date: "14/09/2021"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
