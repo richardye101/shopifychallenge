@@ -214,7 +214,24 @@ getmode(data$order_amount)</code></pre>
 <pre class="r"><code>SELECT COUNT(*) FROM [Orders] as o
 LEFT JOIN [Shippers] as sh ON o.ShipperID = sh.ShipperID
 Where sh.ShipperName = &quot;Speedy Express&quot;</code></pre>
-<p>Ans: 54 What is the last name of the employee with the most orders? What product was ordered the most by customers in Germany?</p>
+<p>Ans: 54</p>
+<p>What is the last name of the employee with the most orders?</p>
+<pre class="r"><code>SELECT e.LastName, COUNT(*) as Orders FROM [Orders] as o
+LEFT JOIN [Employees] as e ON o.EmployeeID = e.EmployeeID
+GROUP BY e.LastName, e.FirstName
+ORDER BY Orders desc
+LIMIT 1</code></pre>
+<p>Ans: Peacock with 40 orders</p>
+<p>What product was ordered the most by customers in Germany?</p>
+<pre class="r"><code>SELECT p.ProductName, SUM(od.Quantity) as Quantity, c.Country FROM [Orders] AS o
+LEFT JOIN [OrderDetails] as od ON o.OrderID = od.OrderID
+LEFT JOIN [Customers] as c on o.CustomerID = c.CustomerID
+LEFT JOIN [Products] as p on od.ProductID = p.ProductID
+WHERE c.Country = &quot;Germany&quot;
+GROUP BY od.ProductID
+ORDER BY Quantity DESC
+LIMIT 1</code></pre>
+<p>Ans: Boston Crab Meat at 160 items ordered over 4 orders. This definition of most is based on the assumption we want the item with the highest total quantity ordered by customers in Germany.</p>
 </div>
 
 

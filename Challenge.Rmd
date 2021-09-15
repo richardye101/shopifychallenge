@@ -96,4 +96,4 @@ ORDER BY Quantity DESC
 LIMIT 1
 ```
 
-Ans: Boston Crab Meat at 160 items ordered over 4 orders.
+Ans: Boston Crab Meat at 160 items ordered over 4 orders. This definition of most is based on the assumption we want the item with the highest total quantity ordered by customers in Germany.
